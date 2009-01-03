@@ -1,12 +1,28 @@
+// src/App.js
 import { useState } from 'react';
 import './App.css';
 import StocksGerant from './components/StocksGerant';
+import Keyboard from './components/Keyboard';
 
 function App() {
   const [mode, setMode] = useState('employe');
+  const [keyboardInput, setKeyboardInput] = useState('');
 
   const toggleMode = () => {
     setMode(mode === 'employe' ? 'gerant' : 'employe');
+  };
+
+  const handleKeyPress = (key) => {
+    if (key === '.' && keyboardInput.includes('.')) {
+      return;
+    }
+    setKeyboardInput(prev => prev + key);
+  };
+  
+  const handleClear = () => {
+    if (keyboardInput.length > 0) {
+      setKeyboardInput(prev => prev.slice(0, -1));
+    }
   };
 
   return (
@@ -22,7 +38,20 @@ function App() {
             <div className="energies-pompe-section">ENERGIES POMPE</div>
             <div className="consultation-carte-section">CONSULTATION CARTE</div>
           </div>
-          <div className="encaissment-section">ENCAISSEMENT</div>
+          <div className="encaissment-section">
+            <div className="encaissement-header">
+              ENCAISSEMENT
+            </div>
+            <div className="encaissement-content">
+              {/* Contenu de la section encaissement */}
+            </div>
+            <div className="keyboard-wrapper">
+              <Keyboard 
+                onKeyPress={handleKeyPress}
+                onClear={handleClear}
+              />
+            </div>
+          </div>
         </div>
       ) : (
         <div className="content-wrapper">
@@ -33,7 +62,20 @@ function App() {
               <StocksGerant />
             </div>
           </div>
-          <div className="encaissment-gerant-section">ENCAISSEMENT</div>
+          <div className="encaissment-gerant-section">
+            <div className="encaissement-header">
+              ENCAISSEMENT
+            </div>
+            <div className="encaissement-content">
+              {/* Contenu de la section encaissement en mode gérant */}
+            </div>
+            <div className="keyboard-wrapper">
+              <Keyboard 
+                onKeyPress={handleKeyPress}
+                onClear={handleClear}
+              />
+            </div>
+          </div>
         </div>
       )}
       <button className="mode-toggle" onClick={toggleMode}>

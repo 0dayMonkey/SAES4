@@ -1,0 +1,82 @@
+/* src/styles/Keyboard.css */
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f5f5f7;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .keyboard-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .keyboard-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+  
+  .keyboard-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .keyboard-key {
+    flex: 1;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 300; /* Plus fin pour le style iOS */
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif; /* Police iOS */
+    cursor: pointer;
+    margin: 0 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s ease;
+  }
+  
+  .keyboard-key:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .keyboard-key:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    background-color: #e8e8e8;
+  }
+  
+  /* Style spécifique pour la touche C (effacer) */
+  .keyboard-key-clear {
+    background-color: #ffe0e0;
+    color: #ff3b30; /* Couleur d'accentuation rouge iOS */
+    font-weight: 400;
+  }
+  
+  .keyboard-key-clear:hover {
+    background-color: #ffd0d0;
+  }
+  
+  .keyboard-key-clear:active {
+    background-color: #ffc0c0;
+  }
+  
+  /* Animation de pression au clic */
+  @keyframes keyPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+  
+  .keyboard-key:active {
+    animation: keyPress 0.15s ease;
+  }
