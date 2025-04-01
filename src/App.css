@@ -189,3 +189,32 @@
 .mode-toggle:hover {
   background-color: #555;
 }
+
+/* Ajoutez ces styles à votre fichier App.css */
+
+.keyboard-wrapper {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 40%;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.encaissment-section, .encaissment-gerant-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.encaissement-header {
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.encaissement-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 10px 70px 10px; /* Espace en bas pour le clavier */
+}
