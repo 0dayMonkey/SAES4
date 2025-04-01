@@ -1,0 +1,88 @@
+/* src/styles/StoreStatus.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+.store-status {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Icône circulaire - agrandie */
+.store-status::before {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+/* Styles pour le mode employé */
+.store-status.employe::before {
+  background-color: #0066ff; /* Bleu pour employé */
+  border: 1px solid #0055dd;
+}
+
+.store-status.employe {
+  border: 1px solid #0066ff;
+}
+
+/* Styles pour le mode gérant */
+.store-status.gerant::before {
+  background-color: #ff9500; /* Orange pour gérant */
+  border: 1px solid #ee8400;
+}
+
+.store-status.gerant {
+  border: 1px solid #ff9500;
+}
+
+/* Styles pour l'état fermé */
+.store-status.closed::before {
+  background-color: #808080; /* Gris pour fermé */
+  border: 1px solid #707070;
+}
+
+.store-status.closed {
+  border: 1px solid #808080;
+}
+
+/* Texte */
+.store-status-text {
+  margin-left: 60px; /* Espace plus grand pour l'icône */
+  font-size: 16px; /* Taille de police légèrement plus grande */
+  font-weight: 700; /* Équivalent à bold dans Inter */
+}
+
+/* Effet hover */
+.store-status:hover {
+  background-color: #f8f8f8;
+}
+
+/* Effet actif lors du clic */
+.store-status:active {
+  background-color: #f0f0f0;
+}
+
+/* Focus pour accessibilité */
+.store-status:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}

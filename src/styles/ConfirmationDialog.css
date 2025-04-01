@@ -1,0 +1,121 @@
+/* src/styles/ConfirmationDialog.css */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-out;
+  }
+  
+  .dialog-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    max-width: 90%;
+    padding: 20px;
+    animation: scaleIn 0.2s ease-out;
+    border-top: 4px solid #007aff; /* Valeur par défaut */
+  }
+  
+  /* Styles spécifiques pour le mode employé */
+  .dialog-container.employe {
+    border-top: 4px solid #0066ff; /* Bleu pour employé */
+  }
+  
+  /* Styles spécifiques pour le mode gérant */
+  .dialog-container.gerant {
+    border-top: 4px solid #ff9500; /* Orange pour gérant */
+  }
+  
+  .dialog-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #000;
+    text-align: center;
+  }
+  
+  .dialog-message {
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+    color: #333;
+    text-align: center;
+  }
+  
+  .dialog-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border-top: 1px solid #e6e6e6;
+    padding-top: 15px;
+  }
+  
+  .dialog-button {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    min-width: 80px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .dialog-button-cancel {
+    background-color: #f2f2f7;
+    color: #007aff; /* Valeur par défaut */
+  }
+  
+  .dialog-button-confirm {
+    background-color: #007aff; /* Valeur par défaut */
+    color: white;
+  }
+  
+  /* Styles spécifiques pour le mode employé */
+  .dialog-button-cancel.employe {
+    color: #0066ff;
+  }
+  
+  .dialog-button-confirm.employe {
+    background-color: #0066ff;
+  }
+  
+  /* Styles spécifiques pour le mode gérant */
+  .dialog-button-cancel.gerant {
+    color: #ff9500;
+  }
+  
+  .dialog-button-confirm.gerant {
+    background-color: #ff9500;
+  }
+  
+  .dialog-button-cancel:hover {
+    background-color: #e6e6ea;
+  }
+  
+  .dialog-button-confirm:hover {
+    opacity: 0.9;
+  }
+  
+  .dialog-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.3);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
