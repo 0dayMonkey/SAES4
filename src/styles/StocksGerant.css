@@ -1,0 +1,115 @@
+
+
+/* Composant principal */
+.stocks-container {
+  padding: 5px;
+  background-color: #52ab95;
+  width: 100%; /* ajuster la taille du composant de stocks ici */
+  height: 100%;
+  font-size: 14px;
+}
+
+.stocks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stocks-title {
+  color: white;
+  margin: 10px;
+  font-size: 18px;
+}
+
+.stocks-button {
+  color: white;
+  border: 1px solid #2d6a50;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.stocks-button.active {
+  background-color: #2d6a50;
+}
+
+.stocks-button.inactive {
+  background-color: #52ab95;
+}
+
+.stocks-button-energie {
+  margin-right: 5px;
+}
+
+.stocks-content-box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 10px;
+  color: black; 
+}
+
+.stocks-content-box * {
+  color: black; 
+}
+
+.stocks-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.stocks-table-cell {
+  border: 1px solid gray;
+  padding: 4px;
+  background-color: #b8b8b8;
+}
+
+.stocks-form-label {
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.stocks-form-input {
+  background-color: #ccc;
+  padding: 4px;
+  border-radius: 4px;
+  border: none;
+  font-size: 12px;
+}
+
+.stocks-command-button {
+  background-color: #4cd964;
+  color: black;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.stocks-subtitle {
+  font-size: 14px;
+  margin: 0 0 5px 0;
+}
+
+.stocks-form-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.stocks-form-label-space {
+  margin-left: 10px;
+}
+
+.stocks-unit {
+  margin-left: 2px;
+  font-size: 12px;
+}
+
+.stocks-command-container {
+  display: flex;
+  justify-content: flex-end;
+}
